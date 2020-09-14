@@ -25,6 +25,19 @@ public class UserCase1 {
             }
             System.out.println();
         }
-
-}
+      }
+         public static void checkToss()
+    {    
+        p1=scan.nextInt(2);
+        if(p1==0)
+        {
+            System.out.println("p1 play first");
+            System.out.println("p2 play Second");
+        }    
+        else
+        {
+            System.out.println("p2 play first");
+            System.out.println("p1 play second");
+        }
+    }
 }
