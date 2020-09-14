@@ -22,25 +22,47 @@ public class UserCase1 {
        {
        System.out.println("Enter the between 1-9");
        int playerPos=scan.nextInt();
-       System.out.println(""+playerPos);
-
+        while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPositions))
+       {
+           System.out.println("Position taken! Enter a correct Position");
+           playerPos=scan.nextInt();
+       }
        placePeace(gameBoard,playerPos,"player");
-
+       
+       String result = checkWinner();
+       if(result.length()>0){
+           System.out.println(""+result);
+           break;
+       }
        Random rand=new Random();
        int cpuPos=rand.nextInt(9)+1;
+       while(playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPos))
+       {
+           cpuPos=rand.nextInt(9)+1;
+       }
+
        placePeace(gameBoard,cpuPos,"cpu");
 
        printGameBoard(gameBoard);
-        }
+
+       result=checkWinner();
+       if(result.length()>0){
+           System.out.println(""+result);
+           break;
+       }
+
+       }
 
 }
          public static void placePeace(char[][] gameBoard,int pos, String user)
        {
         char symbol=' ';
         if(user.equals("player")){
+           playerPositions.add(pos);
             symbol='X';
         }
         else if(user.equals("cpu")){
+            cpuPositions.add(pos);
             symbol='O';
         }
       switch(pos){
@@ -74,8 +96,44 @@ public class UserCase1 {
             default:
                     break;
        }
-      printGameBoard(gameBoard);        
        }
+             public static String checkWinner(){
+          List toprow=Arrays.asList(1, 2, 3);
+          List toprow1=Arrays.asList(1, 2, 6);
+          List midrow=Arrays.asList(4, 5, 6);
+          List botrow=Arrays.asList(7, 8, 9);
+          List leftcol=Arrays.asList(1, 4, 7);
+          List midcol=Arrays.asList(2, 5, 8);
+          List rightcol=Arrays.asList(3, 6, 9);
+          List cross1=Arrays.asList(1, 5, 9);
+          List cross2=Arrays.asList(7, 5, 3);
+
+          List<List> winning = new ArrayList<List>();
+          winning.add(toprow);
+          winning.add(toprow1);
+          winning.add(midrow);
+          winning.add(botrow);
+          winning.add(leftcol);
+          winning.add(midcol);
+          winning.add(rightcol);
+          winning.add(cross1);
+          winning.add(cross2);
+          for(List l: winning){
+          if(playerPositions.containsAll(l))
+             {
+               return "congratution you win ";
+             } 
+            else if(cpuPositions.containsAll(l))
+             {
+              return "cpu win soryy :(";
+             }
+             else if(playerPositions.size()+cpuPositions.size()==9)
+               {
+               return "Game Tied";    
+               }
+          }
+            return "";
+}
 
       public static void printGameBoard(char[][] gameBoard){
 
@@ -87,13 +145,13 @@ public class UserCase1 {
         }
       }
          public static void checkToss()
-    {    
+    {
         p1=scan.nextInt(2);
         if(p1==0)
         {
             System.out.println("p1 play first");
             System.out.println("p2 play Second");
-        }    
+        }
         else
         {
             System.out.println("p2 play first");
