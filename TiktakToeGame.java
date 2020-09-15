@@ -31,7 +31,7 @@ static int block=0;
            playerPos=scan.nextInt();
        }
         placePeace(gameBoard,playerPos,"player");
-       }else{
+       }else if(playerPos==5){
                  System.out.println("corner have no place");
            while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPositions ))
        {
