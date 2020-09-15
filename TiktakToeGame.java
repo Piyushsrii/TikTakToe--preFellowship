@@ -31,7 +31,16 @@ static int block=0;
            playerPos=scan.nextInt();
        }
         placePeace(gameBoard,playerPos,"player");
+       }else{
+                 System.out.println("corner have no place");
+           while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPositions ))
+       {
+           System.out.println("Position taken! Enter a correct Position");
+           playerPos=scan.nextInt();
        }
+        placePeace(gameBoard,playerPos,"player");
+       }
+             }
 
          Random rand=new Random();
          int cpuPos=rand.nextInt(9)+1;
