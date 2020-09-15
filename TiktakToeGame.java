@@ -41,7 +41,13 @@ static int block=0;
         placePeace(gameBoard,playerPos,"player");
        }
              }
-
+             
+              String result = checkWinner();
+       if(result.length()>0){
+           System.out.println(""+result);
+            printGameBoard(gameBoard);
+           break;
+       }
          Random rand=new Random();
          int cpuPos=rand.nextInt(9)+1;
          if(cpuPos==2 || cpuPos == 4 || cpuPos==6 || cpuPos==8)             
@@ -53,7 +59,12 @@ static int block=0;
        } 
        placePeace(gameBoard,cpuPos,"cpu");
        }
-         
+          String result = checkWinner();
+       if(result.length()>0){
+           System.out.println(""+result);
+            printGameBoard(gameBoard);
+           break;
+       }
        printGameBoard(gameBoard);
 
        }
@@ -134,7 +145,7 @@ static int block=0;
              }
              else if(playerPositions.size()+cpuPositions.size()==9)
                {
-               return "Game Tied";    
+               return "Game Over";    
                }
           }
             return "";
