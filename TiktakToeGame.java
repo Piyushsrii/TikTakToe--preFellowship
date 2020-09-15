@@ -6,7 +6,7 @@ package tiktaktoe;
  * @author user
  */
 public class UserCase1 {
-
+static int block=0;
      public static void main(String[] args) {
 
         char[][] gameBoard={{' ','|',' ','|',' '},
@@ -22,6 +22,7 @@ public class UserCase1 {
        {
        System.out.println("Enter the between 1-9");
        int playerPos=scan.nextInt();
+        block=block+1;
         while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPositions))
        {
            System.out.println("Position taken! Enter a correct Position");
@@ -35,6 +36,9 @@ public class UserCase1 {
            break;
        }
        Random rand=new Random();
+      if(block==2){
+           System.out.println("Block the Player wining position by cpu");
+       }
        int cpuPos=rand.nextInt(9)+1;
        while(playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPos))
        {
