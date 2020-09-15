@@ -22,38 +22,30 @@ static int block=0;
        {
        System.out.println("Enter the between 1-9");
        int playerPos=scan.nextInt();
-        block=block+1;
-        while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPositions))
+       if(playerPos==1 || playerPos==3 || playerPos == 5 || playerPos == 7 || playerPos==9)
+       { 
+           System.out.println("you are in right path");
+       while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPositions))
        {
            System.out.println("Position taken! Enter a correct Position");
            playerPos=scan.nextInt();
        }
-       placePeace(gameBoard,playerPos,"player");
+        placePeace(gameBoard,playerPos,"player");
+       }
        
-       String result = checkWinner();
-       if(result.length()>0){
-           System.out.println(""+result);
-           break;
-       }
-       Random rand=new Random();
-      if(block==2){
-           System.out.println("Block the Player wining position by cpu");
-       }
-       int cpuPos=rand.nextInt(9)+1;
+         Random rand=new Random();
+         int cpuPos=rand.nextInt(9)+1;
+         if(cpuPos==2 || cpuPos == 4 || cpuPos==6 || cpuPos==8)             
+       {
+       System.out.println("Cpu enter your value from 1-9 on board value is "+cpuPos);
        while(playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPos))
        {
            cpuPos=rand.nextInt(9)+1;
-       }
-
+       } 
        placePeace(gameBoard,cpuPos,"cpu");
-
-       printGameBoard(gameBoard);
-
-       result=checkWinner();
-       if(result.length()>0){
-           System.out.println(""+result);
-           break;
        }
+         
+       printGameBoard(gameBoard);
 
        }
 
