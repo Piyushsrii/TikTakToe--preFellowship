@@ -32,7 +32,7 @@ static int block=0;
        }
         placePeace(gameBoard,playerPos,"player");
        }
-       
+
          Random rand=new Random();
          int cpuPos=rand.nextInt(9)+1;
          if(cpuPos==2 || cpuPos == 4 || cpuPos==6 || cpuPos==8)             
