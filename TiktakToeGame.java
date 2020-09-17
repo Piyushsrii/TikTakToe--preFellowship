@@ -57,7 +57,6 @@ static int block=0;
        printGameBoard(gameBoard);
 
        }
-
 }
          public static void placePeace(char[][] gameBoard,int pos, String user)
        {
