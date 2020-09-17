@@ -35,15 +35,15 @@ public class UserCase1 {
 
 }
          public static void placePeace(char[][] gameBoard,int pos, String user)
-       {
-        char symbol=' ';
-        if(user.equals("player")){
+         {
+         char symbol=' ';
+         if(user.equals("player")){
             symbol='X';
-        }
-        else if(user.equals("cpu")){
+         }
+         else if(user.equals("cpu")){
             symbol='O';
-        }
-      switch(pos){
+         }
+        switch(pos){
         case 1:
             gameBoard[0][0]=symbol;
             break;
@@ -74,20 +74,20 @@ public class UserCase1 {
             default:
                     break;
        }
-      printGameBoard(gameBoard);        
+       printGameBoard(gameBoard);        
        }
-
-      public static void printGameBoard(char[][] gameBoard){
-
-        for(char[] a: gameBoard){
+       public static void printGameBoard(char[][] gameBoard)
+       {
+        for(char[] a: gameBoard)
+        {
             for(char b: a){
                 System.out.print(b);
-            }
-            System.out.println();
+                         }
+                    System.out.println();
         }
-      }
-         public static void checkToss()
-    {    
+        }
+       public static void checkToss()
+       {    
         p1=scan.nextInt(2);
         if(p1==0)
         {
