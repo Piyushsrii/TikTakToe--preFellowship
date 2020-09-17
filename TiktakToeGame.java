@@ -31,7 +31,7 @@ public class UserCase1 {
        placePeace(gameBoard,cpuPos,"cpu");
 
        printGameBoard(gameBoard);
-        }
+       }
 
 }
          public static void placePeace(char[][] gameBoard,int pos, String user)
