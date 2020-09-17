@@ -16,7 +16,6 @@ static int block=0;
              {' ','|',' ','|',' '}};
 
        printGameBoard(gameBoard);
-
        checkToss();
        while(true)
        {
