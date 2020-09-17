@@ -96,7 +96,7 @@ public class UserCase1 {
             default:
                     break;
        }
-       }
+         }
              public static String checkWinner(){
           List toprow=Arrays.asList(1, 2, 3);
           List toprow1=Arrays.asList(1, 2, 6);
