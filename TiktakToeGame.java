@@ -33,7 +33,7 @@ public class UserCase1 {
        if(result.length()>0){
            System.out.println(""+result);
            break;
-       }
+      }
        Random rand=new Random();
        int cpuPos=rand.nextInt(9)+1;
        while(playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPos))
