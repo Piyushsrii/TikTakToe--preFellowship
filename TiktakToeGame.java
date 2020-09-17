@@ -128,9 +128,9 @@ public class UserCase1 {
               return "cpu win soryy :(";
              }
              else if(playerPositions.size()+cpuPositions.size()==9)
-               {
+              {
                return "Game Tied";    
-               }
+              }
           }
             return "";
 }
