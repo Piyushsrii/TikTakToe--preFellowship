@@ -27,7 +27,7 @@ static int block=0;
        {
            System.out.println("Position taken! Enter a correct Position");
            playerPos=scan.nextInt();
-       }
+        }
        placePeace(gameBoard,playerPos,"player");
        
        String result = checkWinner();
